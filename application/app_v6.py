@@ -4,7 +4,7 @@ Simple rest interface for VariantVlidator built using Flask Flask-RESTPlus and S
 
 # Import modules
 from flask import Flask, make_response, request
-from flask_restplus import Api, Resource, reqparse, fields, abort
+from flask_restx import Api, Resource, reqparse, fields, abort
 import requests
 from requests.exceptions import ConnectionError
 from dicttoxml import dicttoxml
@@ -88,22 +88,22 @@ class HelloClass(Resource):
         if args['content-type'] == 'application/json':
             # example: http://127.0.0.1:5000/name/name/bob?content-type=application/json
             return json({
-                "greeting" : "Hello World"
+                "greeting" : "Hello, pgCert"
             },
                 200, None)
         # example: http://127.0.0.1:5000/name/name/bob?content-type=text/xml
         elif args['content-type'] == 'text/xml':
             return xml({
-                 "greeting" : "Hello World"
+                 "greeting" : "Hello, pgCert"
             },
                 200, None)
         else:
             # Return the api default output
             return {
-                 "greeting" : "Hello World"
+                 "greeting" : "Hello, pgCert"
             }
 
-name_space = api.namespace('name', description='Return a name provided by the user')
+name_space = api.namespace('hello, this is saeeda - it works!', description='Simple API that returns a greeting - I can finally pretend I can code')
 @name_space.route("/<string:name>")
 class NameClass(Resource):
 

@@ -4,7 +4,7 @@ Simple rest interface for VariantValidator built using Flask Flask-RESTPlus and 
 
 # Import modules
 from flask import Flask, make_response
-from flask_restplus import Api, Resource, reqparse
+from flask_restx import Api, Resource, reqparse
 import requests
 from dicttoxml import dicttoxml
 
@@ -63,19 +63,19 @@ class HelloClass(Resource):
         if args['content-type'] == 'application/json':
             # example: http://127.0.0.1:5000/name/name/bob?content-type=application/json
             return json({
-                "greeting" : "Hello World"
+                "greeting" : "Hello, pgCert"
             },
                 200, None)
         # example: http://127.0.0.1:5000/name/name/bob?content-type=text/xml
         elif args['content-type'] == 'text/xml':
             return xml({
-                 "greeting" : "Hello World"
+                 "greeting" : "Hello, pgCert"
             },
                 200, None)
         else:
             # Return the api default output
             return {
-                 "greeting" : "Hello World"
+                 "greeting" : "Hello, pgCert"
             }
 
 name_space = api.namespace('name', description='Return a name provided by the user')

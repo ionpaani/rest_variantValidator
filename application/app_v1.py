@@ -4,7 +4,7 @@ Simple rest interface for VariantVlidator built using Flask Flask-RESTPlus and S
 
 # Import modules
 from flask import Flask
-from flask_restplus import Api, Resource
+from flask_restx import Api, Resource
 
 # Define the application as a Flask app with the name defined by __name__ (i.e. the name of the current module)
 # Most tutorials define application as "app", but I have had issues with this when it comes to deployment,
@@ -16,12 +16,12 @@ api = Api(app = application)
 
 # Define a name-space to be read Swagger UI which is built in to Flask-RESTPlus
 # The first variable is the path of the namespace the second variable describes the space
-hello_space = api.namespace('hello', description='Simple API that returns a greeting')
+hello_space = api.namespace('hello, this is saeeda - it works!', description='Simple API that returns a greeting - I can finally pretend I can code')
 @hello_space.route("/")
 class HelloClass(Resource):
 	def get(self):
 		return {
-			"greeting": "Hello World"
+			"greeting": "Hello, pgCert"
 		}
 
 

@@ -21,7 +21,7 @@ hello_space = api.namespace('hello', description='Simple API that returns a gree
 class HelloClass(Resource):
     def get(self):
         return {
-            "greeting": "Hello World"
+            "greeting": "Hello, pgCert"
         }
 
 
