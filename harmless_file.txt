@@ -1,0 +1,4 @@
+will need to git checkout -b <api_tutorial_ionpaani> from api_tutorial branch
+
+TRY THIS FOR FREE https://www.codecademy.com/learn/paths/build-python-web-apps-flask
+
